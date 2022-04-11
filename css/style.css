@@ -26,15 +26,43 @@ main{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.vl{
+    align-self: center;
+    height: 110px;
+    border-left: 2px dotted #888;
+}
+.red{
+    color: red;
+}
+.green{
+    color: rgb(0, 173, 0);
+}
+
 .input_box{
     width: 560px;
     height: 620px;
     margin-left: 25px;
 }
+
+
 .total_box{
     width: 480px;
     height: 146px;
+    display: flex;
+    justify-content: space-between;
 }
+.tsbox{
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tsbox h3{
+    margin-top: 10px;
+}
+
+
 .chart_box{
     width: 480px;
     height: 449px;
