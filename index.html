@@ -14,8 +14,34 @@
     <main>
         <div class="warp">
             <div class="input_box box_style">
-
+                <form class="radio_input">
+                    <div class="radio_box input_style">
+                        <input type="radio" name="radio">
+                        <label for="income">درآمد</label>
+                    </div>
+                    <div class="radio_box input_style">
+                        <input type="radio" name="radio">
+                        <label for="outcome">هزینه</label>
+                    </div>
+                </form>
+                <form class="financial_form">
+                    <label>مبلغ:</label>
+                    <input type="text" id="ffi1" class="input_style"><br>
+                    <label>مبلغ به حروف</label><br>
+                    <label>تاریخ:</label>
+                    <div class="ff_date">
+                        <input type="text" class="input_style">
+                        <input type="text" class="input_style">
+                        <input type="text" class="input_style">
+                    </div>
+                    <br>
+                    <label>توضیحات:</label>
+                    <input type="text" class="input_style"><br> <!-- modify this one, need to be fixed -->
+                    <button class="sub-btn" type="submit">ثبت دخل و خرج</button>
+                </form>
+                
             </div>
+
             <div>
                 <div class="total_box box_style">
                     <div class="tsbox">
