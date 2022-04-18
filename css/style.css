@@ -1,8 +1,13 @@
+@font-face {
+    font-family: iransans;
+    src: url("../font/FontsFree-Net-ir_sans.ttf");
+}
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     direction: rtl;
+    font-family: iransans;
 }
 header{
     height: 200px;
@@ -42,6 +47,44 @@ main{
 .green{
     color: rgb(0, 173, 0);
 }
+.btn{
+    font-size: 13px;
+    border-radius: 4px;
+    min-width: 65px;
+    min-height: 30px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.delete-btn{
+    background-color: #fff;
+    border: 1px solid red;
+    color: red;
+}
+.delete-btn:hover{
+    background-color: red;
+    color: #fff;
+}
+.delete-btn:active{
+    background-color: #fff;
+    border: 1px solid red;
+    color: red;
+}
+.general-btn{
+    background-color: rgb(2, 72, 202);
+    color: #fff;
+    border: none;
+}
+.general-btn:hover{
+    background-color: #fff;
+    color: rgb(2, 72, 202);
+    border: 1px solid rgb(2, 72, 202);
+}
+.general-btn:active{
+    background-color: rgb(2, 72, 202);
+    color: #fff;
+    border: none;
+}
 
 .input_box{
     width: 560px;
@@ -64,7 +107,7 @@ main{
 }
 .radio_input .radio_box label{
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 16px;
 }
 .radio_input .radio_box input{
     margin-right: 20px;
@@ -100,7 +143,7 @@ main{
     color: #fff;
     border-radius: 3px;
     border: none;
-    font-size: large;
+    font-size: medium;
 }
 
 .total_box{
@@ -131,3 +174,23 @@ main{
     min-height: 150px;
     margin-top: 25px;
 }
+table{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+td,th{
+    padding: 10px;
+    text-align: center;
+}
+tr:first-of-type{
+    padding-top: 10px;
+}
+th:first-of-type{
+    width: 90px;
+}
+/* tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+} */
