@@ -16,23 +16,23 @@
             <div class="input_box box_style">
                 <form class="radio_input">
                     <div class="radio_box input_style">
-                        <input type="radio" name="radio">
+                        <input type="radio" id="income" name="radio" value="income" checked>
                         <label for="income">درآمد</label>
                     </div>
                     <div class="radio_box input_style">
-                        <input type="radio" name="radio">
+                        <input type="radio" id="outcome" name="radio" value="outcome">
                         <label for="outcome">هزینه</label>
                     </div>
                 </form>
                 <form class="financial_form">
                     <label>مبلغ:</label>
-                    <input type="text" id="ffi1" class="input_style"><br>
+                    <input type="text" id="ffi1" class="input_style" placeholder="مبلغ مورد نظر را وارد کنید"><br>
                     <label>مبلغ به حروف</label><br>
                     <label>تاریخ:</label>
                     <div class="ff_date">
-                        <input type="text" class="input_style">
-                        <input type="text" class="input_style">
-                        <input type="text" class="input_style">
+                        <input type="text" id="d-day" class="input_style" placeholder="روز">
+                        <input type="text" id="d-month" class="input_style" placeholder="ماه">
+                        <input type="text" id="d-year" class="input_style" placeholder="سال">
                     </div>
                     <br>
                     <label>توضیحات:</label>
@@ -86,5 +86,6 @@
             </div>
         </div>
     </main>
+    <script src="./js/script.js"></script>
 </body>
 </html>
