@@ -115,9 +115,10 @@ main{
 .financial_form{
     padding: 40px;
     padding-top: 20px;
+    font-size: 14px;
 }
 .financial_form>*{
-    margin-top: 10px;
+    margin-top: 8px;
 }
 .financial_form .input_style{
     height: 55px;
@@ -135,6 +136,13 @@ main{
 }
 #ffi1{
     width: 100%;
+}
+#detail_box{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    text-align: start;
+    padding: 5px;
 }
 .sub-btn {
     width: 100%;

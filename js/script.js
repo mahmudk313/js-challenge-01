@@ -1,6 +1,6 @@
 //Query Selectors
 let inputBox = document.querySelector('.input_box');
-let radioInput = inputBox.querySelector('input[type=radio][name=radio]:checked');
+let radioInput = inputBox.querySelector('input[type=radio][name=radio]');
 let inputCost = inputBox.querySelector('#ffi1');
 let submitBtn = inputBox.querySelector('.sub-btn');
 let day = inputBox.querySelector('#d-day');
