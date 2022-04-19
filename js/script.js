@@ -6,15 +6,20 @@ let submitBtn = inputBox.querySelector('.sub-btn');
 let day = inputBox.querySelector('#d-day');
 let month = inputBox.querySelector('#d-month');
 let year = inputBox.querySelector('#d-year');
+let detailInput = inputBox.querySelector('#detail_box');
 
 //JS
 let fin = {} //type,cost,date,detail
+let finData = []
 
 submitBtn.addEventListener('click' , function(e) {
     e.preventDefault();
     typeHandler();
     costHandler();
     dateHandler();
+    detailHandler();
+    fin.key = Date.now();
+    finDataHandler();
 })
 
 
@@ -32,6 +37,15 @@ let dateHandler = () => {
         day : day.value
     }
     year.value = month.value = day.value = ''
-    console.log(fin)
     
+}
+
+let detailHandler = () => {
+    fin.detail = detailInput.value;
+    detailInput.value = '';
+}
+
+let finDataHandler = () => {
+    finData.push(fin);
+    console.log(finData)
 }
