@@ -7,6 +7,11 @@ let day = inputBox.querySelector('#d-day');
 let month = inputBox.querySelector('#d-month');
 let year = inputBox.querySelector('#d-year');
 let detailInput = inputBox.querySelector('#detail_box');
+let dataShow = document.querySelector('#list_row');
+let tnum = dataShow.querySelector('#tnum');
+let tcost = dataShow.querySelector('#tcost');
+let tdate = dataShow.querySelector('#tdate');
+let ttype = dataShow.querySelector('#ttype');
 
 //JS
 let fin = {} //type,cost,date,detail
