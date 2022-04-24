@@ -16,7 +16,7 @@
             <div class="input_box box_style">
                 <form class="radio_input">
                     <div class="radio_box input_style">
-                        <input type="radio" id="income" name="radio" value="income" >
+                        <input type="radio" id="income" name="radio" value="income" checked>
                         <label for="income">درآمد</label>
                     </div>
                     <div class="radio_box input_style">
@@ -63,7 +63,7 @@
             </div>
 
             <div class="list_box box_style">
-                <table>
+                <table id="table">
                     <tr>
                         <th class="">ردیف</th>
                         <th>مبلع</th>
@@ -72,7 +72,7 @@
                         <th>توضیحات</th>
                     </tr>
 
-                    <tr class="list_row">
+                    <!-- <tr class="list_row">
                         <td id="tnum">1</td>
                         <td id="tcost">100 تومان</td>
                         <td id="tdate">1401/1/25</td>
@@ -81,13 +81,14 @@
                             <button class="btn general-btn">نمایش</button>
                             <button class="btn delete-btn">حذف</button>
                         </td>
-                    </tr>
+                    </tr> -->
 
 
                 </table>
             </div>
         </div>
     </main>
+    <script src="./js/printData.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
