@@ -1,5 +1,4 @@
 class printData {
-    prevList;
 
     constructor(options) {
         this.setupOptions(options);
@@ -8,7 +7,7 @@ class printData {
     setupOptions (options) {
         let {element , data , template} = options;
         console.log(data)
-        data.forEach(item => element.innerHTML += template(item));
+        element.innerHTML += template(data);
     }
 
 

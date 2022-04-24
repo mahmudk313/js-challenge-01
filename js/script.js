@@ -10,44 +10,45 @@ let detailInput = inputBox.querySelector('#detail_box');
 let table = document.getElementById("table");
 
 //JS
-let fin = {} //type,cost,date,detail
+
 let finData = []
 
 
 
 
-let typeHandler = (e) => {
-    // e.preventDefault();
-    fin.type = radioInput;
-}
-let costHandler = (e) => {
-    // e.preventDefault();
-    fin.cost = parseInt(inputCost.value);
-    inputCost.value = '';
-}
-let dateHandler = (e) => {
-    // e.preventDefault();
-    fin.date = {
-        year : year.value,
-        month : month.value,
-        day : day.value
-    }
-    year.value = month.value = day.value = ''
-    
-}
-
-let detailHandler = (e) => {
-    // e.preventDefault();
-    fin.detail = detailInput.value;
-    detailInput.value = '';
-}
-
-let finDataHandler = (e) => {
-    // e.preventDefault();
-    finData.push(fin);
-}
 
 submitBtn.addEventListener('click' , function(e) {
+    let fin = {} //type,cost,date,detail
+    let typeHandler = (e) => {
+        // e.preventDefault();
+        fin.type = radioInput;
+    }
+    let costHandler = (e) => {
+        // e.preventDefault();
+        fin.cost = parseInt(inputCost.value);
+        inputCost.value = '';
+    }
+    let dateHandler = (e) => {
+        // e.preventDefault();
+        fin.date = {
+            year : year.value,
+            month : month.value,
+            day : day.value
+        }
+        year.value = month.value = day.value = ''
+        
+    }
+    
+    let detailHandler = (e) => {
+        // e.preventDefault();
+        fin.detail = detailInput.value;
+        detailInput.value = '';
+    }
+    
+    let finDataHandler = (e) => {
+        // e.preventDefault();
+        finData.push(fin);
+    }
     e.preventDefault();
     typeHandler();
     costHandler();
@@ -57,11 +58,9 @@ submitBtn.addEventListener('click' , function(e) {
     finDataHandler();
     
 
-})
-
 new printData({
     element : table ,
-    data : finData,
+    data : fin,
     template : (item) => {
         return `
             <tr class="list_row">
@@ -78,3 +77,4 @@ new printData({
     }
 })
 
+})
