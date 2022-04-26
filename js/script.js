@@ -2,7 +2,7 @@
 let inputBox = document.querySelector('.input_box');
 let incomeBtn = inputBox.querySelector('#income');
 let outcomeBtn = inputBox.querySelector('#outcome');
-let inputCost = inputBox.querySelector('#ffi1');
+let inputValue = inputBox.querySelector('#ffi1');
 let submitBtn = inputBox.querySelector('.sub-btn');
 let day = inputBox.querySelector('#d-day');
 let month = inputBox.querySelector('#d-month');
@@ -35,10 +35,10 @@ submitBtn.addEventListener('click' , function(e) {
         // e.preventDefault();
         fin.type = radioInput.value;
     }
-    let costHandler = (e) => {
+    let valueHandler = (e) => {
         // e.preventDefault();
-        fin.cost = parseInt(inputCost.value);
-        inputCost.value = '';
+        fin.value = parseInt(inputValue.value);
+        inputValue.value = '';
     }
     let dateHandler = (e) => {
         // e.preventDefault();
@@ -63,7 +63,7 @@ submitBtn.addEventListener('click' , function(e) {
     }
     e.preventDefault();
     typeHandler();
-    costHandler();
+    valueHandler();
     dateHandler();
     detailHandler();
 
@@ -78,7 +78,7 @@ submitBtn.addEventListener('click' , function(e) {
             return `
                 <tr class="list_row">
                     <td id="tnum">${finData.length}</td>
-                    <td id="tcost">${item.cost} تومان</td>
+                    <td id="tvalue">${item.value} تومان</td>
                     <td id="tdate">${item.date.year}/${item.date.month}/${item.date.day}</td>
                     <td id="ttype" class="${item.type === "income" ? "green" : "red" }">${item.type === "income" ? "درآمد" : "هزینه"}</td>
                     <td>
@@ -90,8 +90,8 @@ submitBtn.addEventListener('click' , function(e) {
         }
     })
 
-    totalIn.innerHTML = `${finData.filter(item => item.type === "income").map(item => item.cost).reduce((total, num ) => total + num, 0)}`
-    totalOut.innerHTML = `${finData.filter(item => item.type === "outcome").map(item => item.cost).reduce((total, num ) => total + num, 0)}`
+    totalIn.innerHTML = `${finData.filter(item => item.type === "income").map(item => item.value).reduce((total, num ) => total + num, 0)}`
+    totalOut.innerHTML = `${finData.filter(item => item.type === "outcome").map(item => item.value).reduce((total, num ) => total + num, 0)}`
 
 })
 
