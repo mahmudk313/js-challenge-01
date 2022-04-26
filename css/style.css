@@ -183,13 +183,18 @@ main{
     margin-top: 25px;
 }
 table{
+    table-layout: fixed;
     margin-top: 10px;
     width: 100%;
     border-collapse: collapse;
 }
 td,th{
+    font-size: 15px;
     padding: 10px;
     text-align: center;
+}
+#table td{
+    font-size: 14px;
 }
 tr:first-of-type{
     padding-top: 10px;

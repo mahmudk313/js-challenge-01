@@ -16,7 +16,7 @@
             <div class="input_box box_style">
                 <form class="radio_input">
                     <div class="radio_box input_style">
-                        <input type="radio" id="income" name="radio" value="income" checked>
+                        <input type="radio" id="income" name="radio" value="income" checked >
                         <label for="income">درآمد</label>
                     </div>
                     <div class="radio_box input_style">
@@ -26,7 +26,7 @@
                 </form>
                 <form class="financial_form">
                     <label>مبلغ:</label>
-                    <input type="text" id="ffi1" class="input_style" placeholder="مبلغ مورد نظر را وارد کنید"><br>
+                    <input type="text" id="ffi1" class="input_style" placeholder="مبلغ مورد نظر را وارد کنید" required><br>
                     <label>مبلغ به حروف</label><br>
                     <label>تاریخ:</label>
                     <div class="ff_date">
@@ -46,27 +46,28 @@
                 <div class="total_box box_style">
                     <div class="tsbox">
                         <h2>درآمد</h2>
-                        <h3 class="green">2500000</h3>
+                        <h3 id="totalIn" class="green">0</h3>
                     </div>
 
                     <div class="vl"></div>
 
                     <div class="tsbox">
                         <h2>مخارج</h2>
-                        <h3 class="red">3500000</h3>
+                        <h3 id="totalOut" class="red">0</h3>
                     </div>
                 </div>
     
                 <div class="chart_box box_style">
-    
+                    
                 </div>
+
             </div>
 
             <div class="list_box box_style">
                 <table id="table">
                     <tr>
                         <th class="">ردیف</th>
-                        <th>مبلع</th>
+                        <th>مبلغ</th>
                         <th>تاریخ</th>
                         <th>نوع هزینه</th>
                         <th>توضیحات</th>
@@ -88,6 +89,7 @@
             </div>
         </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="./js/printData.js"></script>
     <script src="./js/script.js"></script>
 </body>

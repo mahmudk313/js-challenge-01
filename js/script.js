@@ -1,27 +1,39 @@
 //Query Selectors
 let inputBox = document.querySelector('.input_box');
-let radioInput = inputBox.querySelector('input[type=radio][name=radio]:checked');
+let incomeBtn = inputBox.querySelector('#income');
+let outcomeBtn = inputBox.querySelector('#outcome');
 let inputCost = inputBox.querySelector('#ffi1');
 let submitBtn = inputBox.querySelector('.sub-btn');
 let day = inputBox.querySelector('#d-day');
 let month = inputBox.querySelector('#d-month');
 let year = inputBox.querySelector('#d-year');
 let detailInput = inputBox.querySelector('#detail_box');
-let table = document.getElementById("table");
+let table = document.getElementById("table").querySelector('tbody');
+let totalIn = document.querySelector('#totalIn');
+let totalOut = document.querySelector('#totalOut');
 
 //JS
 
 let finData = []
 
+// incomeBtn.addEventListener('click' , function(e) {
+//     incomeBtn.setAttribute('checked', '');
+//     outcomeBtn.removeAttribute('checked', '');
+// })
 
+// outcomeBtn.addEventListener('click' , function(e) {
+//     outcomeBtn.setAttribute('checked','');
+//     incomeBtn.removeAttribute('checked', '');
+// })
 
 
 
 submitBtn.addEventListener('click' , function(e) {
+    let radioInput = inputBox.querySelector('input[type=radio][name=radio]:checked');
     let fin = {} //type,cost,date,detail
     let typeHandler = (e) => {
         // e.preventDefault();
-        fin.type = radioInput;
+        fin.type = radioInput.value;
     }
     let costHandler = (e) => {
         // e.preventDefault();
@@ -54,27 +66,32 @@ submitBtn.addEventListener('click' , function(e) {
     costHandler();
     dateHandler();
     detailHandler();
+
     fin.key = Date.now();
     finDataHandler();
     
 
-new printData({
-    element : table ,
-    data : fin,
-    template : (item) => {
-        return `
-            <tr class="list_row">
-                <td id="tnum">1</td>
-                <td id="tcost">${item.cost} تومان</td>
-                <td id="tdate">${item.date.year}/${item.date.month}/${item.date.day}</td>
-                <td id="ttype" class="green red"></td>
-                <td>
-                    <button class="btn general-btn">نمایش</button>
-                    <button class="btn delete-btn">حذف</button>
-                </td>
-            </tr>
-        `
-    }
-})
+    new printData({
+        element : table ,
+        data : fin,
+        template : (item) => {
+            return `
+                <tr class="list_row">
+                    <td id="tnum">${finData.length}</td>
+                    <td id="tcost">${item.cost} تومان</td>
+                    <td id="tdate">${item.date.year}/${item.date.month}/${item.date.day}</td>
+                    <td id="ttype" class="${item.type === "income" ? "green" : "red" }">${item.type === "income" ? "درآمد" : "هزینه"}</td>
+                    <td>
+                        <button class="btn general-btn">نمایش</button>
+                        <button class="btn delete-btn">حذف</button>
+                    </td>
+                </tr>
+            `
+        }
+    })
+
+    totalIn.innerHTML = `${finData.filter(item => item.type === "income").map(item => item.cost).reduce((total, num ) => total + num, 0)}`
+    totalOut.innerHTML = `${finData.filter(item => item.type === "outcome").map(item => item.cost).reduce((total, num ) => total + num, 0)}`
 
 })
+
