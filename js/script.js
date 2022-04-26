@@ -12,10 +12,11 @@ let table = document.getElementById("table").querySelector('tbody');
 let totalIn = document.querySelector('#totalIn');
 let totalOut = document.querySelector('#totalOut');
 
+
 //JS
 
 let finData = []
-
+let xValues , inValue, iochart;
 // incomeBtn.addEventListener('click' , function(e) {
 //     incomeBtn.setAttribute('checked', '');
 //     outcomeBtn.removeAttribute('checked', '');
@@ -76,7 +77,7 @@ submitBtn.addEventListener('click' , function(e) {
         data : fin,
         template : (item) => {
             return `
-                <tr class="list_row">
+                <tr id="${item.id}" class="list_row">
                     <td id="tnum">${finData.length}</td>
                     <td id="tvalue">${item.value} تومان</td>
                     <td id="tdate">${item.date.year}/${item.date.month}/${item.date.day}</td>
@@ -93,5 +94,20 @@ submitBtn.addEventListener('click' , function(e) {
     totalIn.innerHTML = `${finData.filter(item => item.type === "income").map(item => item.value).reduce((total, num ) => total + num, 0)}`
     totalOut.innerHTML = `${finData.filter(item => item.type === "outcome").map(item => item.value).reduce((total, num ) => total + num, 0)}`
 
+    // let xValues = finData.map(item => item.date.month)
+    // let inValue = finData.filter(item=> item.type === "income").map(item => item.value);
+    
+    
+    // iochart = new Chart("ioChart", {
+    // type: "line",
+    // data:{
+    //         labels : xValues,
+    //         datasets: [{
+    //             borderColor : "green",
+    //             fill : false,
+    //             data: inValue
+    //         }]
+    //     } ,
+    //     options: {}
+    //   });
 })
-

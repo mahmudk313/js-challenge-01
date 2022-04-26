@@ -175,8 +175,17 @@ main{
 .chart_box{
     width: 480px;
     height: 449px;
-    margin-top:25px ;
+    margin-top:25px;
 }
+#ioChart{
+    width: 450px;
+    height: 400px;
+    padding: 10px;
+    align-items: center;
+}
+
+
+
 .list_box{
     width: 100%;
     min-height: 150px;
